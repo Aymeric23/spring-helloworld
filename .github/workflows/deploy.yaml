@@ -16,13 +16,18 @@ jobs:
      - name: Récupération code
        if: ${{github.ref == 'refs/heads/master'}}
        uses: actions/checkout@v4.1.1
-     - name: Développement 
+     - name: Déploiement Développement 
        if: github.event.inputs.server == 'dev'
        run: echo "Déploiement en Développement"
-     - name: Qualification 
+     - name: Déploiement Qualification 
        if: github.event.inputs.server == 'qual'
-       run: echo "Déploiement en Qualification"
+       run: |
+         echo "Déploiement en Qualification"
+         exit 1
      - name: Déploiement Production 
        if: github.event.inputs.server == 'prod'
        run: echo "Déploiement en Production"
+     - name: Fin de Workflow
+       if: always()
+       run: echo "Fin de Workflow"
       
