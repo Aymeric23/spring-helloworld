@@ -12,4 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Démarrage Workflow
-       run: echo "Démarrage du Wokflow"
+       run: echo "Démarrage du Wokflow sur ${{github.ref}}"
+     - name: Changement branche
+       run: echo "Changement de branche"
