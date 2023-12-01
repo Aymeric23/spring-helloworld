@@ -14,5 +14,5 @@ jobs:
      - name: Démarrage Workflow
        run: echo "Démarrage du Wokflow sur ${{github.ref}}"
      - name: Récupération code
-       run: echo "Récupération du code"
        if: ${{github.ref == 'refs/heads/master'}}
+       uses: actions/checkout@v4.1.1
