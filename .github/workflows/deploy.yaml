@@ -13,5 +13,6 @@ jobs:
     steps:
      - name: Démarrage Workflow
        run: echo "Démarrage du Wokflow sur ${{github.ref}}"
-     - name: Changement branche
-       run: echo "Changement de branche"
+     - name: Récupération code
+       run: echo "Récupération du code"
+       if: ${{github.ref == 'refs/heads/master'}}
